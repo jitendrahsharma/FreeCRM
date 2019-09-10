@@ -33,10 +33,15 @@ public class DealsPageTest extends TestBase
 	dealsPage=homePage.clickOnDealsLinks();
 		
 	}
-	@Test
+	@Test(priority=1)
 	public void verifyDealsLabelTest()
 	{
 		Assert.assertTrue(dealsPage.verifyDealsLabel());
+	}
+	@Test(priority=2)
+	public void validateCreateNewDeals()
+	{
+		homePage.clickOnNewDealsLink();
 	}
 	@AfterMethod
 	public void tearDown()

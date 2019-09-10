@@ -8,8 +8,8 @@
     <classes>
       <class name="com.crm.qa.testcase.CasePageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="Setup"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.crm.qa.testcase.CasePageTest -->
       <class name="com.crm.qa.testcase.HomePageTest">
@@ -20,15 +20,16 @@
       </class> <!-- com.crm.qa.testcase.HomePageTest -->
       <class name="com.crm.qa.testcase.CalendarPageTest">
         <methods>
+          <include name="verifyCalendarPageTest"/>
           <include name="Setup"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- com.crm.qa.testcase.CalendarPageTest -->
       <class name="com.crm.qa.testcase.ContactPageTest">
         <methods>
+          <include name="verifyContactPageTest"/>
           <include name="selectContactCheckboxTest"/>
           <include name="loginsetup"/>
-          <include name="tearDown"/>
+          <include name="validateCreateNewContact"/>
         </methods>
       </class> <!-- com.crm.qa.testcase.ContactPageTest -->
       <class name="com.crm.qa.testcase.TasksPageTest">

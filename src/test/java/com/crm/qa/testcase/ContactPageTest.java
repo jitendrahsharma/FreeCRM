@@ -42,13 +42,9 @@ public class ContactPageTest extends TestBase
 		contactPage.verifyContactLabel();
 		Assert.assertTrue(contactPage.verifyContactLabel(), "Contact label missing on the page");
 	}
-	@Test(priority=3, dependsOnMethods={"validateCreateNewContact"})
-	public void selectContactCheckboxTest()
-	{
-		contactPage.verifyContactName("Dipak Kumar");
-	}
+	
 	@DataProvider
-	public Object[][] getCRMTContactData()
+	public Object[][] getCRMContactData()
 	{
 		Object data[][]=TestUtil.getTestData(sheetName);
 		return data;
@@ -64,6 +60,11 @@ public class ContactPageTest extends TestBase
 		Assert.assertEquals(contactName, "Dipak Kumar  ");
 		System.out.println("New Contact Add successfully in the contact List");
 	 }
+	@Test(priority=3, dependsOnMethods={"validateCreateNewContact"})
+	public void selectContactCheckboxTest()
+	{
+		contactPage.verifyContactName("Dipak Kumar");
+	}
 	@AfterMethod
 	public void tearDown()
 	{

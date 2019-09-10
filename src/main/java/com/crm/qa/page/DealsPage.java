@@ -10,6 +10,23 @@ public class DealsPage extends TestBase
 {
 	@FindBy(xpath="//td[contains(text(),'Deals')]")
 	WebElement dealsLabel;
+	@FindBy(id="title")
+	WebElement title;
+	@FindBy(xpath="//input[@name='client_lookup']")
+	WebElement company;
+	@FindBy(xpath="//input[@name='contact_lookup']")
+	WebElement primaryContact;
+	@FindBy(id="amount")
+	WebElement amount;
+	@FindBy(xpath="//input[@id='probability']")
+	WebElement probability;
+	@FindBy(xpath="//input[@id='commission']")
+	WebElement commission;
+	@FindBy(xpath="	//input[@name='identifier']")
+	WebElement identifier;
+	@FindBy(xpath="//a[contains(text(),'Add one here')]")
+	WebElement addNewProduct;
+
 	public DealsPage()
 	{
 		PageFactory.initElements(driver,this);
@@ -20,4 +37,8 @@ public class DealsPage extends TestBase
 		return dealsLabel.isDisplayed();
 	}
 
+	public void createNewDeals()
+	{
+		
+	}
 }
