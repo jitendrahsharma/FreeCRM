@@ -20,6 +20,7 @@ public class TestBase
 	public static Properties prop;
 	public  static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
+	public static final String testDataExcelFileName="FreeCRMTestData.xlsx";
 	public TestBase()
 	{
 		try
@@ -47,7 +48,7 @@ public class TestBase
 		}
 		else if(broweserName.equals("FF"))
 		{
-			System.setProperty("webdriver.gecko.driver", "E:/Software/geckodriver-v0.24.0-win32/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "E:/Software/geckodriver-v0.24.0-win64/geckodriver.exe");
 			driver=new FirefoxDriver();	
 		}
 		e_driver = new EventFiringWebDriver(driver);

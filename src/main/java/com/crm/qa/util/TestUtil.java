@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -12,18 +11,15 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
 import com.crm.qa.base.TestBase;
-
-
-
 public class TestUtil extends TestBase
 {
 	public static long PAGE_LOAD_TIMEOUT=100;
-	public static long IMPLICT_WAIT=70;
+	public static long IMPLICT_WAIT=100;
 	static String  TESTDATA_SHEET_PATH="C:/Users/Jitendra/workspace/FreeCRM/src/main/java/com/crm/qa/testdata/FreeCRMTestData.xlsx";
 	static Workbook book;
 	static Sheet sheet;
+	
 	public void switchToFrame()
 	{
 		driver.switchTo().frame("mainpanel");
@@ -68,6 +64,7 @@ public class TestUtil extends TestBase
 		
 		return data;
 	}
+	
 	
 	public static void takeScreenshotAtEndOfTest() throws IOException
 	{

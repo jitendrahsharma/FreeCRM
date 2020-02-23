@@ -126,8 +126,7 @@ public String  verifyNewContactName(String contactName)
 	
 }
 
-public void createNewContact(String title,String firstName,String middleName,String last_name,String suffix_Name,String nick_Name, String company_Name, String position
-)
+public void createNewContact(String title,String firstName,String middleName,String last_name,String suffix_Name,String nick_Name, String company_Name, String position)
 {
 	String value="14-Jul-1974";
 	Select titlen=new Select(titleName);

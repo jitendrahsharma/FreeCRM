@@ -34,11 +34,12 @@ public class ContactPageTest extends TestBase
 		testUtil=new TestUtil();
 		homePage=loginPage.login(prop.getProperty("user"), prop.getProperty("password"));
 		testUtil.switchToFrame();
-		contactPage=homePage.clickOnContactsLinks();
+		
 	}
 	@Test(priority=1)
 	public void verifyContactPageTest()
 	{
+		contactPage=homePage.clickOnContactsLinks();
 		contactPage.verifyContactLabel();
 		Assert.assertTrue(contactPage.verifyContactLabel(), "Contact label missing on the page");
 	}
@@ -50,7 +51,7 @@ public class ContactPageTest extends TestBase
 		return data;
 	}
 	@Test(priority=2, dataProvider="getCRMContactData")
-	public void validateCreateNewContact(String title,String firstName,String middleName,String last_name,String suffix_Name,String nick_Name, String company_Name,String position)
+	public void validateCreateNewContact(String title,String firstName,String middleName,String last_name,String suffix_Name,String nick_Name, String company_Name,String position) throws InterruptedException
 	{
 		homePage.clickOnNewContactLink();
 		//contactPage.createNewContact("Mr.","Dipak","abhi","Kumar","Sr.","Dip","Google");

@@ -1,9 +1,12 @@
 package com.crm.qa.page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.base.TestBase;
 
@@ -19,6 +22,9 @@ public class HomePage extends TestBase
 	WebElement dealsLinks;
 	@FindBy(xpath="//a[contains(text(),'New Deal')]")
 	WebElement newDeals;
+	@FindBy(xpath="//ul[@class='mlddm']/li[5]/ul/li[2]/a[contains(text(),'Products')]")
+	WebElement product;
+	
 	@FindBy(xpath="//a[contains(text(),'Tasks')]")
 	WebElement taskLinks;
 	@FindBy(xpath="//a[contains(text(),'Calendar')]")
@@ -114,18 +120,34 @@ public class HomePage extends TestBase
 		taskLinks.click();
 		return new TaskPage();
 	}
-	public void clickOnNewContactLink()
+	public void clickOnNewContactLink() throws InterruptedException
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(contactsLinks).build().perform();
+		Thread.sleep(1000);
 		newContact.click();
 		
 	}
-	public void clickOnNewDealsLink()
+	public void clickOnNewDealsLink() throws InterruptedException
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(dealsLinks).build().perform();
-		newDeals.click();
+		WebDriverWait wait=new WebDriverWait(driver, 70);
+		WebElement newdeals= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'New Deal')]")));
+		newdeals.click();
+		
+	}
+	public void  clickOnNewProductLink() throws InterruptedException
+	{
+		Actions action=new Actions(driver);
+		action.moveToElement(dealsLinks).build().perform();
+		Thread.sleep(1000);
+		product.click();
+		}
+	public void clickOnFullSearchFormLink()
+	{
+		Actions action=new Actions(driver);
+		action.moveToElement(dealsLinks).build().perform();
 		
 	}
 }
